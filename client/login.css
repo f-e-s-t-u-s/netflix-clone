@@ -81,7 +81,8 @@
 }
 
 
-.signin h1{
+.signin h1,
+.signin h2{
     color: white;
     padding-left: 10px;
 

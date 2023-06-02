@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./login.css" />
     <!-- <link rel="stylesheet" href="./style.css"> -->
-    <title>Netflix Login</title>
+    <title>Netflix Register</title>
   </head>
   <body>
     <div class="parent">
@@ -21,8 +21,8 @@
                     <div class="sign">
               <div class="signin">
                
-                <form action="" class="loginForm">
-                  <h1>Sign In</h1>
+                <form action="/register" method="POST" class="loginForm">
+                  <h2>Enter your Details to start your membership</h2>
                   <div class="input">
                     <div class="email">
                       <input type="" placeholder="Email or phone number" name="email_address" />
@@ -35,7 +35,7 @@
                   </div>
 
                   <div class="submit">
-                    <button type="submit">Sign In</button>
+                    <button type="submit">Create Account</button>
                   </div>
                   <div class="remember">
                     <input type="checkbox" name="Remember me" id="remember" />
@@ -43,7 +43,7 @@
                   </div>
 
                   <div class="new">
-                    <a href="./index.html" style="text-decoration: none;"> <p>New to Netflix? Sign up now</p></a>
+                    <a href="/login" style="text-decoration: none;"> <p>Already have an account? Login in now</p></a>
                   </div>
 
                   <div class="protected">
@@ -64,6 +64,6 @@
       </div>
      
     </div>
-    <script src="./index.js"></script>
+    <!-- <script src="./index.js"></script> -->
   </body>
 </html>
