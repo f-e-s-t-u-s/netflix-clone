@@ -3,7 +3,7 @@
     margin: 0;
 }
 .parent{
-    background-color: green;
+    /* background-color: green; */
     height: 100vh;
 
 }
@@ -61,8 +61,21 @@
     height: 50vh;
 }
 .trending{
-    background-color: black;
-    height: 30vh;
+    /* background-color: black; */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.today,
+.thisweek{
+    height: 50vh;
+}
+.today{
+    background-color: yellow;
+    margin-bottom: 10px;
+}
+.thisweek{
+    background-color: bisque;
 }
 
 .popular{
@@ -107,6 +120,7 @@
     display: flex;
     /* justify-content: space-between; */
     flex-direction: column;
+    justify-content: center;
     height: 80%;
     width: 170px;
     padding: 5px;
@@ -132,4 +146,10 @@
 }
 .description{
     /* height: 80%; */
+    background-color: blue;
+    width: 170px;
+    padding: 5px;
+    height: 60px;
+    margin-left: 5px;
+    border-radius: 5px;
 }
