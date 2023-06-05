@@ -34,3 +34,17 @@ faqQuestions.forEach((question) => {
 });
 
 console.log(faqAnswer)
+
+//menu popup
+const xmark = document.querySelector('.xmark');
+const menucontent = document.querySelector('.menucontent')
+const menu = document.getElementById('menu')
+
+menu.addEventListener('onclick', function(){
+  menucontent.classList.toggle('active')
+}
+)
+
+xmark.onclick = ()=>{
+  menucontent.classList.toggle('active')
+}

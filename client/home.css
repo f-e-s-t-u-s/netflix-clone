@@ -5,6 +5,7 @@
 .parent{
     /* background-color: green; */
     height: 100vh;
+    width: 100vw;
 
 }
 .nav{
@@ -15,6 +16,21 @@
     padding: 7px;
     background-color: white ;
     
+}
+.menucontent{
+    /* display: block; */
+    display: none;
+    position: fixed;
+    left: 0;
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    text-align: center;
+    top: 0;
+    transform: scaleX(0);
+}
+.xmark{
+    display: none;
 }
 .nav-images{
     width: 180px;
@@ -35,6 +51,7 @@
 }
 .search{
     display: flex;
+    
     /* background-color: yellow; */
     justify-content: center;
     align-items: center;
@@ -152,4 +169,35 @@
     height: 60px;
     margin-left: 5px;
     border-radius: 5px;
+}
+
+/* media queries */
+@media (max-width:300px) {
+    .search input{
+        display: none;
+    }
+}
+
+@media (max-width:900px) {
+    .xmark{
+        display: block;
+        right: 1em;
+        top: 2em;
+        width: 20px;
+        cursor: pointer;
+        position: absolute;
+    }
+    .xmark img{
+        width: 100%;
+    }
+    .menucontent p{
+        margin-top: 2em;
+        font-size: 18px;
+    }
+    .active{
+        transform: scaleX(1);
+    }
+    .menucontent{
+        display: block;
+    }
 }
