@@ -13,16 +13,23 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 93vh;
+    height: 100vh;
+    width: 100vw;
    
     background-color: red;
+
+    
     
 }
 .background{
     background-image: url("../../images/one.jpg");
     background-position: center;
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
    
 }
 .darken{
@@ -46,13 +53,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 80vh;
 }
 
 .sign{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 620px;
+    height: 100%;
     width: 430px;
     /* margin-bottom: 50px; */
     background-color: hsl(0, 0%, 0%,0.8);
@@ -172,11 +180,13 @@
 }
 
 .footer{
-    height: 7vh;
-    background-color: hsl(0, 0%, 0%,0.8);
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.894);
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    width: 100%;
+    position: absolute;
 
 }
