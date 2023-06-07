@@ -1,0 +1,163 @@
+:root{
+    --btnColor:#e50914;
+    --white:#ffff;
+}
+*{
+list-style: none;
+text-decoration: none;
+font-family: 'Poppins', sans-serif;
+
+
+}
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap');
+
+  .home{
+    display: grid;
+    gap: 10px;
+    background-color: rgb(45%, 45%,45%);
+  }
+.container{
+    background:linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%), url('../../images/mainBack\).jpg');
+    min-height: 80vh;
+    background-position: center;
+    background-size: cover;
+    
+    width: 100%;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+}
+.navImage{
+    width: 120px;
+}
+.navImage img{
+    width: 100%;
+}
+.signin button{
+    padding: 5px 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: var(--btnColor);
+    cursor: pointer;
+
+}
+.signin button a{
+    color: var(--white);
+}
+.information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2em;
+    text-align: center;
+    justify-content: center;
+    height: 60vh;
+}
+
+.information h1{
+    color: var(--white);
+    margin-bottom: 0;
+}
+.information small{
+    color: var(--white);
+    
+    
+}
+.emailbox{
+    display: flex;
+    width: 80%;
+    gap: .5em;
+    justify-content: center;
+    margin-top: 1em;
+    flex-wrap: wrap;
+}
+.emailbox input{
+    padding: 7px;
+    color: grey;
+    background-color: rgba(0, 0, 0, 0.544);
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
+.emailbox button{
+    background-color: var(--btnColor);
+    border: none;
+    border-radius: 3px;
+    width: 102px;
+}
+.emailbox button a{
+    color: var(--white);
+}
+/* ! small screen design */
+@media (max-width:482px) {
+    .emailbox button{
+        padding: 7px 0;
+    }
+    
+}
+@media (max-width:640px) {
+    .information h1{
+        font-size: 32px;
+    }
+    .information{
+        height: 40vh;
+    }
+    .container{
+        min-height: 60vh;
+    }
+    
+    .cardContainer{
+        background-color: #e50914;
+        width: 100%;
+        height: 50px;
+    }
+}
+/* reusable home styles */
+.home-container{
+    background-color: black;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    min-height: 40vh;
+    justify-content: space-between;
+}
+.reverse{
+    flex-direction: row-reverse;
+}
+.description{
+    width: 50%;
+    text-align: center;
+    
+}
+.image{
+    width: 50%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.imagecontainer{
+    width: 300px;
+}
+.imagecontainer img{
+    width: 100%;
+}
+@media (max-width:800px) {
+    .description{
+        width: 100%;
+    }
+    .image{
+        width: 100%;
+    }
+    
+}
