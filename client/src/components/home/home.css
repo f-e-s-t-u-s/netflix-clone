@@ -33,14 +33,19 @@ font-family: 'Poppins', sans-serif;
     align-items: center;
     justify-content: space-between;
     padding: 1em;
+    height: 80px;
 }
 .navImage{
     width: 120px;
+
 }
 .navImage img{
     width: 100%;
 }
-.signin button{
+.signup{
+    height: 100%;
+}
+.signup button{
     padding: 5px 15px;
     border-radius: 3px;
     border: none;
@@ -48,7 +53,7 @@ font-family: 'Poppins', sans-serif;
     cursor: pointer;
 
 }
-.signin button a{
+.signup button a{
     color: var(--white);
 }
 .information{
@@ -58,7 +63,7 @@ font-family: 'Poppins', sans-serif;
     margin-top: 2em;
     text-align: center;
     justify-content: center;
-    height: 60vh;
+    
 }
 
 .information h1{

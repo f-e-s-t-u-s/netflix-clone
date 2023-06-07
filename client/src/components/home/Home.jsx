@@ -15,7 +15,7 @@ function Home() {
           <div className="navImage">
             <img src={logo} alt="" />
           </div>
-          <div className="signin">
+          <div className="signup">
             <button>
               <Link>Sign in</Link>
             </button>
