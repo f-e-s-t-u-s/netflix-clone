@@ -1,7 +1,7 @@
 
 import './index.css';
 import {Route, Routes} from'react-router-dom'
-// import the home route  fro the components
+// import the home route  from the components
 
 import Home from './components/home/Home';
 // import the signup component from the homes folder
