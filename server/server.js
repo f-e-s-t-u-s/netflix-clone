@@ -101,20 +101,21 @@ app.get("*", (req, res) =>{
 
 
 
-const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
-const options = {
-  method: 'GET',
-  headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NjBiNzAwYTBkYWFjZjc4ZmQ1MDliYmM4M2ZlN2M1ZSIsInN1YiI6IjY0Nzk5Y2NjMTc0OTczMDBjMTMxOTRhNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NFDwHkJtyQTv3OXF7KXXP7ruByZf6__4Fbrp3-VATDQ'
-  }
-};
+// const url = 'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
+// const options = {
+//   method: 'GET',
+//   headers: {
+//     accept: 'application/json',
+//     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NjBiNzAwYTBkYWFjZjc4ZmQ1MDliYmM4M2ZlN2M1ZSIsInN1YiI6IjY0Nzk5Y2NjMTc0OTczMDBjMTMxOTRhNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.NFDwHkJtyQTv3OXF7KXXP7ruByZf6__4Fbrp3-VATDQ'
+//   }
+// };
 
-fetch(url, options)
-  .then(res => res.json())
-  .then(json => console.log(json))
-  .catch(err => console.error('error:' + err));
+// fetch(url, options)
+//   .then(res => res.json())
+//   .then(json => console.log(json))
+//   .catch(err => console.error('error:' + err));
 
 app.listen(8000, () =>{
     console.log("Server is lisening on http:localhost:8000")
 })
+
