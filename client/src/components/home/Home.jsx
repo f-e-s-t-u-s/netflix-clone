@@ -17,7 +17,7 @@ function Home() {
           </div>
           <div className="signup">
             <button>
-              <Link>Sign in</Link>
+              <Link to={'/signup'}>Sign in</Link>
             </button>
           </div>
         </div>

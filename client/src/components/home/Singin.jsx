@@ -75,12 +75,13 @@ function Singin() {
                 </div>
               </div>
             </div>
+            <div className="footer">
+           <span>&#169;</span> Festus Gitahi
+        </div>
           </div>
         </div>
 
-        <div className="footer">
-           <span>&#169;</span> Festus Gitahi
-        </div>
+  
       </div>
     </main>
   );
