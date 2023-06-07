@@ -5,7 +5,7 @@ import {Route, Routes} from'react-router-dom'
 
 import Home from './components/home/Home';
 // import the signup component from the homes folder
-import Singin from './components/Singin';
+import Singin from './components/home/Singin';
 function App() {
   return (
     <div>

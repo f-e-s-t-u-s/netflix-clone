@@ -1,8 +1,10 @@
 import React from 'react'
-
+import "./signin.css"
 function Singin() {
   return (
-    <div>Singin</div>
+    <main>Singin
+      
+    </main>
   )
 }
 
