@@ -6,6 +6,8 @@ import {Route, Routes} from'react-router-dom'
 import Home from './components/home/Home';
 // import the signup component from the homes folder
 import Singin from './components/home/Singin';
+
+import Trailer from './components/home/Trailers';
 function App() {
   return (
     <div>
@@ -18,6 +20,9 @@ function App() {
 {/* this 
 is the component that you will be working on  it is found here components/home/Signin.jsx*/}
     <Route path='/signup' element={<Singin></Singin>}></Route>
+
+<Route path='/trailers' element={<Trailer></Trailer>} ></Route>
+
     </Routes>
     </div>
   );
