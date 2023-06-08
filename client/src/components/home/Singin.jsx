@@ -1,7 +1,37 @@
 import React from "react";
 import "./signin.css";
 import logo from "../../images/logo-netflix.png"
+import axios, { Axios } from 'axios'
+import { useState } from "react";
+import gif from "../../images/giphy.gif"
 function Singin() {
+  const[preloader,setpreloader]=useState()
+
+
+  const handlesubmit=(e)=>{
+    setpreloader(true)
+
+    const form =document.querySelector('form')
+    e.preventDefault()
+    const formdata= new FormData(form)
+
+    // console.log([...formdata])
+    const userData = {
+      email_address: formdata.get('email_address'),
+      password: formdata.get('password')
+
+
+    }
+    axios.post('http://localhost:8000/api/register',userData).then((data)=>{
+console.log(data)
+    setpreloader(false)
+
+    })
+
+  }
+console.log(preloader)
+
+
   return (
     <main>
       <div className="parent">
@@ -14,14 +44,17 @@ function Singin() {
 
               <div className="center">
                 <div className="sign">
+                  <div className="gif">
+                 {preloader &&  <img src={gif} alt="" />}
+                  </div>
                   <div className="signin">
-                    <form action="" method="POST">
+                    <form action="" method="POST" onSubmit={handlesubmit}>
                       <h1>Sign In</h1>
                       <div className="input">
                         <div className="email">
                           <input
                             type="email"
-                            name=""
+                            name="email_address"
                             id="email_address"
                             placeholder="Email or phone number"
                           />

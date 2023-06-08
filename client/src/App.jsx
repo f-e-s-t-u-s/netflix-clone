@@ -20,6 +20,7 @@ function App() {
 {/* this 
 is the component that you will be working on  it is found here components/home/Signin.jsx*/}
     <Route path='/signup' element={<Singin></Singin>}></Route>
+    
 
 <Route path='/trailers' element={<Trailer></Trailer>} ></Route>
 
