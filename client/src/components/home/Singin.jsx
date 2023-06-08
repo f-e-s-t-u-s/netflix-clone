@@ -8,7 +8,7 @@ function Singin() {
   const[preloader,setpreloader]=useState()
 
 
-  const handlesubmit=(e)=>{
+  const handlesubmit=async(e)=>{
     setpreloader(true)
 
     const form =document.querySelector('form')
@@ -22,11 +22,10 @@ function Singin() {
 
 
     }
-    axios.post('http://localhost:8000/api/register',userData).then((data)=>{
-console.log(data)
-    setpreloader(false)
-
-    })
+    console.log(userData)
+    await axios.post('http://localhost:8000/api/register',userData).then(data=>{
+      setpreloader(false)
+    }).catch(err=>console.log(err))
 
   }
 console.log(preloader)
@@ -45,10 +44,10 @@ console.log(preloader)
               <div className="center">
                 <div className="sign">
                   <div className="gif">
-                 {preloader &&  <img src={gif} alt="" />}
+                 {preloader===true &&  <img src={gif} alt="" />}
                   </div>
                   <div className="signin">
-                    <form action="" method="POST" onSubmit={handlesubmit}>
+                    <form  onSubmit={handlesubmit}>
                       <h1>Sign In</h1>
                       <div className="input">
                         <div className="email">
