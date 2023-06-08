@@ -3,14 +3,17 @@ const express = require("express")
 const fetch = require("node-fetch")
 const path = require("path")
 const app = express()
-
+const cors =require('cors')
+const bodyParser = require('body-parser')
 const bcrypt = require("bcrypt")
 const {MongoClient} = require("mongodb")
 
-app.use(express.static("client"))
+app.use(express.static(path.join(__dirname, "client/src")))
 app.set("view engine", "ejs")
 app.use(express.urlencoded({extended: false}))
-
+app.use(cors)
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
 
 //eror message
 
@@ -30,7 +33,8 @@ connectMongodb();
 
 //register route
 
-app.post("/register", async(req,res) =>{
+app.post("/api/register", async(req,res) =>{
+    console.log(req.body)
     try{
         const passHashed = await bcrypt.hash(req.body.password, 10)
         const userData = {
