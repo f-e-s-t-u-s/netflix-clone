@@ -10,10 +10,10 @@ const {MongoClient} = require("mongodb")
 
 app.use(express.static(path.join(__dirname, "client/src")))
 app.set("view engine", "ejs")
-app.use(express.urlencoded({extended: false}))
-app.use(cors)
+
+app.use(cors())
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:false}))
 
 //eror message
 
@@ -35,23 +35,11 @@ connectMongodb();
 
 app.post("/api/register", async(req,res) =>{
     console.log(req.body)
-    try{
-        const passHashed = await bcrypt.hash(req.body.password, 10)
-        const userData = {
-            id: Date.now().toString(),
-            email: req.body.email_address,
-            password: passHashed,
-        };
-        // console.log(userData)
-        const collection = client.db("netflix-users").collection("users")
-        await collection.insertOne(userData);
-        console.log("DAta written to database succesfully");
-        
-        res.redirect("/login")
-    } catch (e) {
-        console.log(e)
-        res.redirect("/register")
-    }
+    res.json({
+        loged:true,
+    })
+
+
 })
 
 //login route
