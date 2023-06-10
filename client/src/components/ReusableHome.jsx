@@ -10,10 +10,10 @@ function ReusableHome({topic,desc,image,reverse,video,diff}) {
           {desc}
         </p>
       </div>
-      <div className="image">
+      <div className={`image ${diff && 'separate_container'}`}>
         <div className={`imagecontainer ${diff && 'seperate_video'}`}>
         <img src={image} alt="" />
-        {video && <video  src={video} controls autoPlay loop >
+        {video && <video  src={video}  autoPlay loop >
    
           </video>}
         </div>

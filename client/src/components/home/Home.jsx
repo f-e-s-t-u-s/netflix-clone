@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./home.css";
-import logo from "../../images/logo-netflix.png";
+
 import tv from '../../images/tv.png'
 import phone from '../../images/eleven.jpg'
 import device from '../../images/device.png'
@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import kids from '../../images/kids.png'
 import video1 from '../../gifs/video2.m4v'
 import video2 from '../../gifs/video1.m4v'
+import Navigation from "./Navigation";
 function Home() {
   const[show,setshow]=useState(false)
   const[email,setemail]=useState('')
@@ -27,16 +28,7 @@ function Home() {
   return (
     <div className="home">
       <div className="container">
-        <div className="navigation">
-          <div className="navImage">
-            <img src={logo} alt="" />
-          </div>
-          <div className="signup">
-            <button>
-              <Link to={'/signup'}>Sign in</Link>
-            </button>
-          </div>
-        </div>
+        <Navigation></Navigation>
         <div className="information">
           <h1>Unlimited movies, TV shows, and more</h1>
           <p>Watch anywhere. Cancel anytime.</p>
