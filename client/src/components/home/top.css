@@ -1,3 +1,46 @@
-.moviedescription{
+main{
+    height: 100vh;
+}
+.finish-child{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    height: 80vh;
     
+}
+.finish{
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+    height: 80%;
+    
+    width: 350px;
+}
+.finish img{
+    width: 80%;
+
+}
+.finish p,
+.finish h1{
+    text-align: center;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+button{
+    padding: 10px;
+    width: 80%;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: none;
+   
+    background-color: red;
+    cursor: pointer;
+}
+
+#next{
+    text-align: center;
+
 }

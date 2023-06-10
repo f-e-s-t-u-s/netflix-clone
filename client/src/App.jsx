@@ -8,6 +8,9 @@ import Home from './components/home/Home';
 import Singin from './components/home/Singin';
 
 import Trailer from './components/home/Trailers';
+
+import Finish from './components/home/Finish';
+import Regform from './components/home/Regform';
 function App() {
   return (
     <div>
@@ -23,6 +26,8 @@ is the component that you will be working on  it is found here components/home/S
     
 
 <Route path='/trailers' element={<Trailer></Trailer>} ></Route>
+<Route path='/create' element={<Finish></Finish>} ></Route>
+<Route path='/create/regform' element={<Regform></Regform>} > </Route>
 
     </Routes>
     </div>
