@@ -5,9 +5,10 @@ import axios, { Axios } from 'axios'
 import { useState } from "react";
 import gif from "../../images/giphy.gif"
 import {Link} from 'react-router-dom'
+import {ToastContainer,toast} from 'react-toastify'
 function Singin() {
   const[preloader,setpreloader]=useState()
-
+const[error,setError]=useState('')
 
   const handlesubmit=async(e)=>{
     setpreloader(true)
@@ -25,7 +26,8 @@ function Singin() {
     }
     console.log(userData)
     await axios.post('http://localhost:8000/api/login',userData).then(data=>{
-      console.log(data)
+      console.log(data.data)
+      if(data.data.error) toast.error(data.data.error)
       setpreloader(false)
     }).catch(err=>console.log(err))
 
@@ -35,6 +37,15 @@ console.log(preloader)
 
   return (
     <main>
+        <ToastContainer
+        position={"top-center"}
+        closeOnClick={false}
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
+        draggable={false}
+        autoClose={500}
+      />
+       
       <div className="parent">
         <div className="child">
           <div className="background">
@@ -42,6 +53,7 @@ console.log(preloader)
               <div className="nav">
                 <img src={logo} alt="" />
               </div>
+            
 
               <div className="center">
                 <div className="sign">

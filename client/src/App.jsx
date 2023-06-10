@@ -1,6 +1,7 @@
 
 import './index.css';
 import {Route, Routes} from'react-router-dom'
+import 'react-toastify/dist/ReactToastify.css';
 // import the home route  from the components
 
 import Home from './components/home/Home';

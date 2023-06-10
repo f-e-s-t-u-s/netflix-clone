@@ -7,7 +7,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const bcrypt = require("bcrypt");
-const { MongoClient } = require("mongodb");
+
 const mongoose = require("mongoose");
 const userschema = require("./schema/userShema");
 dotenv.config();
@@ -21,11 +21,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //eror message
 
 //mongo connection
-const connString = process.env.MONGO;
-const client = new MongoClient(connString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const connString =  process.env.MONGO;
+const port =process.env.PORT
+
 const connection = async () => {
   const connect = await mongoose.connect(connString, {
     useNewUrlParser: true,
@@ -33,17 +31,7 @@ const connection = async () => {
   });
   return connect;
 };
-// async function connectMongodb() {
-//     try {
-//         await client.connect();
-//         console.log("Connected to mongodb");
-//     } catch (error) {
-//         console.error("Failed to connect:", error);
-//     }
-// }
-// connectMongodb();
 
-//register route
 
 app.post("/api/register", async (req, res) => {
   // console.log(req.body.email_address)
@@ -70,13 +58,14 @@ app.post("/api/login", async (req, res) => {
 
   if (!user) {
     
-    return res.json({error:'user does not exist'})
+    return res.json({error:'user does not exist',status:400,loged:false})
   }
+
 
   const validPassword = await bcrypt.compare(password, user.password);
   if (!validPassword) {
    
-    return res.json({error:'user does not exist'})
+    return res.json({error:'user does not exist',status:400,loged:false})
   }
   res.json({status:200,loged:true})
   //succes login
@@ -123,9 +112,9 @@ app.get("*", (req, res) => {
 
 connection()
   .then(
-    app.listen(8000, () => {
+    app.listen(port, () => {
       console.log("database connected");
-      console.log("Server is lisening on http:localhost:8000");
+      console.log("Server is lisening on http://localhost:8000");
     })
   )
   .catch((err) => console.log(err));

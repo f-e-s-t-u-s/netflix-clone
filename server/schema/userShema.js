@@ -10,8 +10,11 @@ password:String
 
 
 },
+{
+    collection:'users'
+}
 
 
 )
- const  signup_collection=mongoose.model('LoginDetails',signupSchema)
+ const  signup_collection=mongoose.model('users',signupSchema)
  module.exports =signup_collection
