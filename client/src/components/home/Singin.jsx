@@ -23,7 +23,8 @@ function Singin() {
 
     }
     console.log(userData)
-    await axios.post('http://localhost:8000/api/register',userData).then(data=>{
+    await axios.post('http://localhost:8000/api/login',userData).then(data=>{
+      console.log(data)
       setpreloader(false)
     }).catch(err=>console.log(err))
 

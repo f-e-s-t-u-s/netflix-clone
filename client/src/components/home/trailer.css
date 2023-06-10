@@ -1,0 +1,27 @@
+/* Trailer Component */
+.slideshow{
+    height: 50vh;
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+.slideshow-button{
+    background-color: green;
+    margin-top: 15px;
+    width: 200px;
+    display: flex;
+    /* justify-content: space-between; */
+    margin-left: 10px;
+   
+}
+.slideshow-button button{
+    padding: 9px 10px;
+    font-size: 14px;
+    width: 40%;
+    
+}
+#mylist{
+    margin-left: 15px;
+}
