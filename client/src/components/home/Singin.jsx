@@ -4,6 +4,7 @@ import logo from "../../images/logo-netflix.png"
 import axios, { Axios } from 'axios'
 import { useState } from "react";
 import gif from "../../images/giphy.gif"
+import {Link} from 'react-router-dom'
 function Singin() {
   const[preloader,setpreloader]=useState()
 
@@ -87,13 +88,13 @@ console.log(preloader)
                         </div>
 
                         <div className="createAcc">
-                          <a id="link"
-                            href="/Home.jsx"
+                          <Link id="link"
+                            to={'/'}
                             style={{ textDecoration: 'none'}}
                           >
                             {" "}
-                            <p> <span> New to Netflix? </span>Sign up now</p>{" "}
-                          </a>
+                            <p> <span> New to Netflix? </span>Sign up now</p>
+                          </Link>
                         </div>
 
                         <div className="protected">
@@ -109,7 +110,9 @@ console.log(preloader)
               </div>
             </div>
             <div className="footer">
-           <span>&#169;</span> Festus Gitahi
+ <p>          <span>&#169;</span> Festus Gitahi</p>
+           
+ <p>          <span>&#169;</span> Anerico kakai</p>
         </div>
           </div>
         </div>
