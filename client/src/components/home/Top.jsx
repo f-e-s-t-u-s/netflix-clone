@@ -2,7 +2,7 @@ import React,{Component, useEffect,useState} from "react";
 import apiconnect from "./connect";
 import requests from "../helper/request";
 import axios from "axios";
-
+import './top.css'
 
 
 
@@ -10,6 +10,7 @@ import axios from "axios";
 function Top(){
     const [movie, setMovie] =useState([])
 const base_url = 'https://api.themoviedb.org/3'
+const image_URL='https://image.tmdb.org/t/p/original/'
   useEffect( ()=>{
     axios.get(`${base_url}${requests.netflixoriginals}`).then((response)=>{
         const data = response.data.results
@@ -22,16 +23,32 @@ const base_url = 'https://api.themoviedb.org/3'
   },[])
   console.log(movie);
 
+//   function to tream the long string of movies.overview
+const substringoverview=(str,n)=>{
+
+return str?.length>n ?str.substring(0,n-1)+".....":str
+
+}
+
+
    
         return(
             <div className="slideshow">
-                <div className="slideshow-text">
-                    <h1>Movie Name</h1>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi qui voluptate possimus nesciunt exercitationem, illum itaque labore necessitatibus officiis expedita quam eveniet dolorum ex voluptas, ab, at tempora provident tempore. </p>
+                {/* make the bg_image img to ahve a width of 100%  */}
+                <div className="bg_image">
+                    <img src={`${image_URL}${movie?.backdrop_path}`} alt="" />
+{/* make ithe moviedescription to be absolute */}
+               <div className="moviedescription">
+               <div className="slideshow-text">
+                    <h1>{movie?.name||movie?.original_name}</h1>
+                    <p> {substringoverview(movie?.overview,200)} </p>
                 </div>
                 <div className="slideshow-button">
                    <button>Play</button>
                    <button id="mylist">My list</button>
+                </div>
+               </div>
+               
                 </div>
             </div>
         )
