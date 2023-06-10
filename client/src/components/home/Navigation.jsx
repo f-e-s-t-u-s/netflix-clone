@@ -10,7 +10,7 @@ function Navigation() {
           </div>
           <div className="signup">
             <button>
-              <Link to={'/signup'}>Sign in</Link>
+              <Link to={'/login'}>Sign in</Link>
             </button>
           </div>
         </div>

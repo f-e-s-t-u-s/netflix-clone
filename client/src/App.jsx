@@ -3,7 +3,6 @@ import './index.css';
 import {Route, Routes} from'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css';
 // import the home route  from the components
-
 import Home from './components/home/Home';
 // import the signup component from the homes folder
 import Singin from './components/home/Singin';
@@ -23,7 +22,7 @@ function App() {
 {/* when someone visits http:localhost:3000/signup we show the signup component */}
 {/* this 
 is the component that you will be working on  it is found here components/home/Signin.jsx*/}
-    <Route path='/signup' element={<Singin></Singin>}></Route>
+    <Route path='/login' element={<Singin></Singin>}></Route>
     
 
 <Route path='/trailers' element={<Trailer></Trailer>} ></Route>

@@ -25,6 +25,7 @@ function Home() {
 
   }
   console.log(checkemail)
+  // console.log(email);
   return (
     <div className="home">
       <div className="container">
@@ -40,7 +41,7 @@ function Home() {
  </div>
             <button>
               
-              <Link>
+              <Link to={{pathname: "/create", search: `?email=${email}`}}>
                 
                 <strong>Get Started</strong>
                 <i class="fa-solid fa-angle-right"></i>
@@ -54,6 +55,7 @@ function Home() {
         <ReusableHome topic='Download your shows to watch offline' desc='Save your favorites easily and always have something to watc' image={phone} reverse={true}></ReusableHome>
         <ReusableHome topic='Watch everywhere' desc='Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.' image={device} video={video2} diff={true}></ReusableHome>
         <ReusableHome topic='Create profiles for kids' desc='Send kids on adventures with their favorite characters in a space made just for them—free with your membership.' image={kids} reverse={true}></ReusableHome>
+       
     </div>
   );
 }
