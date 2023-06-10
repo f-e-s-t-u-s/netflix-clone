@@ -83,7 +83,7 @@ console.log(preloader)
                             style={{colour:'white'}}
                           />
                           </div>
-                          <div className="needHelp"><h3>Need help?</h3></div>
+                          <div className="needHelp"><p>Need help?</p></div>
                           
                         </div>
 
