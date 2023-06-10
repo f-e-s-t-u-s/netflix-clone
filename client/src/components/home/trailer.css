@@ -1,7 +1,7 @@
 /* Trailer Component */
 
 .slideshow {
-  height: 50vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,8 +35,11 @@
   font-size: 12px;
   width: 45%;
 }
+.slideshow-text p{
+  font-size: 18px;
+}
 .slideshow-text h1{
-    font-size: 40px;
+    font-size: 50px;
 }
 .slideshow-button {
   margin-top: 25px;
@@ -61,6 +64,14 @@
 .slideshow-button button img{
     width: 20px;
 }
+/* trailers */
+.categorycontainer{
+  position: absolute;
+  width: 100%;
+  min-height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.279),rgba(0, 0, 0, 0.976),rgb(0, 0, 0),rgb(0, 0, 0) ,black,black);
+  top: 70%;
+}
 
 #mylist {
   margin-left: 15px;
@@ -70,4 +81,37 @@
     .bg_image{
         background-position:  center right bottom;
     }
+    .slideshow-text h1{
+      font-size: 60px;
+    }
+    .slideshow-text p{
+      font-size: 20px;
+    }
 }
+.category{
+  color: white;
+  background: black;
+}
+.trailerimages{
+  display: flex;  
+  overflow-y: scroll;
+  gap: 1em;
+
+
+}
+.movie{
+  height: 150px;
+  object-fit: contain;
+  padding: 10px;
+}
+.main{
+  height: 200px;
+}
+.trailerimages::-webkit-scrollbar{
+  display: none;
+}
+.mainholder{
+  background: linear-gradient(rgba(0, 0, 0, 0.389),rgba(0, 0, 0, 0.413));
+
+}
+

@@ -1,17 +1,19 @@
 import React, { Component, useEffect, useState } from "react";
 import apiconnect from "./connect";
-import requests from "../helper/request";
+
 import axios from "axios";
 import "./top.css";
 import Play from "../../images/play.png"
 import Plus from "../../images/plus.png"
 
 function Top() {
+  const api_key='560b700a0daacf78fd509bbc83fe7c5e'
+  const netflixoriginals=`/discover/tv?api_key=${api_key}&with_networks=213`
   const [movie, setMovie] = useState([]);
   const base_url = "https://api.themoviedb.org/3";
   const image_URL = "https://image.tmdb.org/t/p/original/";
   useEffect(() => {
-    axios.get(`${base_url}${requests.netflixoriginals}`).then((response) => {
+    axios.get(`${base_url}${netflixoriginals}`).then((response) => {
       const data = response.data.results;
       console.log(data);
       const index = Math.floor(
