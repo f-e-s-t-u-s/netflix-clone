@@ -8,6 +8,9 @@ function FinishAcc(){
     const location = useLocation()
     const queryParams = new URLSearchParams(location.search)
     const email = queryParams.get("email") || ""
+    function redirect(){
+        return window.location.href=`/create/regform?email=${email}`
+    }
     return(
         <main>
             <Navigation></Navigation>
@@ -19,8 +22,8 @@ function FinishAcc(){
                     <h1>Finsish setting up your account</h1>
                     <p>Netflix is personalized for you. Create a password to watch on any device at any time.</p>
                     
-                    <button>
-                        <Link to={`/create/regform?email=${email}`} > Next</Link>
+                    <button className="btn"onClick={redirect}>
+                         Next
                        
                     </button>
                 </div>
