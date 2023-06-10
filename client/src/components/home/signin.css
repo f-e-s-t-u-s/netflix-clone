@@ -22,7 +22,7 @@
     
 }
 .background{
-    background-image: url("../../images/one.jpg");
+    background-image: url("../../images/bglarge.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -202,4 +202,25 @@
 .gif img{
     width: 100%;
     height: 100%;
+}
+@media (max-width:640px) {
+    .sign{
+        width: 280px;
+    }
+    .email,
+    .password{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .email input,
+    .password input{
+        width: 200px;
+
+    }
+    .submit{
+        margin-top: 0;
+        
+    }
+    
 }
