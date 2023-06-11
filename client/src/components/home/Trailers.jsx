@@ -4,13 +4,14 @@ import Top from "./Top"
 import gif from "../../images/giphy.gif"
 import ReusableTrailers from "./ReusableTrailers";
 import requests from "../helper/request";
+import Footer from "./Footer";
 function Trailer (){
 
 
 
 
     return(
-        <main>
+        <main className="black">
            <Top></Top>
            <div className="categorycontainer">
             {
@@ -20,8 +21,9 @@ function Trailer (){
 
             }
 
-
+<Footer></Footer>
            </div>
+           
  
         </main>
     );
