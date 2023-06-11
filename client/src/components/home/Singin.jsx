@@ -10,7 +10,10 @@ function Singin() {
   const[preloader,setpreloader]=useState()
 const[error,setError]=useState('')
 
-  const handlesubmit=async(e)=>{
+const redirectFunction=()=>{
+  return window.location.href='/trailers'
+} 
+ const handlesubmit=async(e)=>{
     setpreloader(true)
 
     const form =document.querySelector('form')
@@ -27,9 +30,18 @@ const[error,setError]=useState('')
     console.log(userData)
     await axios.post('http://localhost:8000/api/login',userData).then(data=>{
       console.log(data.data)
-      if(data.data.error) toast.error(data.data.error)
       setpreloader(false)
-    }).catch(err=>console.log(err))
+      if(data.data.error) toast.error(data.data.error)
+      if(data.data.status===200 &&data.data.loged===true) {
+        toast.success('user loged in')
+        setTimeout(redirectFunction,700)
+      }
+      
+    }).catch(err=>{
+      toast.error('failed to add user')
+    }
+    
+    )
 
   }
 console.log(preloader)

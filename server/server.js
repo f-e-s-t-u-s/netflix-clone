@@ -35,15 +35,18 @@ const connection = async () => {
 
 app.post("/api/register", async (req, res) => {
   // console.log(req.body.email_address)
+  const userExist= await userschema.findOne({email:req.body.email})
+  if(userExist) return res.json({error:'user already exist'})
 
   // console.log(value.password);
   const passHashed = await bcrypt.hash(req.body.password, 10);
   const values = {
-    email: req.body.email_address,
+    email: req.body.email,
     password: passHashed,
   };
   const create_user = await userschema.create(values);
   
+if(!create_user)return res.json({error:'failed to add user'})
 
   res.json({
     loged: true,
@@ -53,6 +56,7 @@ app.post("/api/register", async (req, res) => {
 //login route
 app.post("/api/login", async (req, res) => {
   const { email_address, password } = req.body;
+ 
   const user=await userschema.findOne({email:email_address})
 
 
@@ -65,7 +69,7 @@ app.post("/api/login", async (req, res) => {
   const validPassword = await bcrypt.compare(password, user.password);
   if (!validPassword) {
    
-    return res.json({error:'user does not exist',status:400,loged:false})
+    return res.json({error:'does not exist',status:400,loged:false})
   }
   res.json({status:200,loged:true})
   //succes login
@@ -73,23 +77,10 @@ app.post("/api/login", async (req, res) => {
 });
 
 
-//Export api key to client
 
-//get pages
-app.get("/", (req, res) => {
-  res.render("index");
-});
 
-app.get("/login", (req, res) => {
-  res.render("login");
-});
 
-app.get("/register", (req, res) => {
-  res.render("register");
-});
-app.get("/homepage", (req, res) => {
-  res.render("homepage");
-});
+
 app.get("*", (req, res) => {
   res.redirect("/");
 });
