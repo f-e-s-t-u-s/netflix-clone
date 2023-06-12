@@ -7,28 +7,22 @@ import Home from "./components/home/Home";
 import Singin from "./components/home/Singin";
 
 import Trailer from "./components/home/Trailers";
-import Backdrop from "@mui/material/Backdrop";
-import CircularProgress from "@mui/material/CircularProgress";
+
 import Finish from "./components/home/Finish";
 import Regform from "./components/home/Regform";
-import { useState } from "react";
 function App() {
-  const [Notloaded, setLoaded] = useState(true);
 
-  window.addEventListener("load", () => {
-    setLoaded(false);
-  });
+
+
+
+  
+
+
+    
+
 
   return (
     <div>
-      {Notloaded === true && (
-        <Backdrop
-          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
-          open
-        >
-          <CircularProgress color="inherit" />
-        </Backdrop>
-      )}
 
       <Routes>
         {/* when someone visits http:localhost:3000 the home component will be shown */}
