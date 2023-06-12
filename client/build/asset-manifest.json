@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.21ef946d.css",
+    "main.js": "/static/js/main.6ccc3dd0.js",
+    "static/media/bglarge.jpg": "/static/media/bglarge.e371edd6396fcc8006fa.jpg",
+    "static/media/video2.m4v": "/static/media/video2.053994fc9a5da7a97b5b.m4v",
+    "static/media/video1.m4v": "/static/media/video1.b27bb59e747d5b567095.m4v",
+    "static/media/kids.png": "/static/media/kids.6fd4253559d520f03d4d.png",
+    "static/media/device.png": "/static/media/device.8e6539e8bfc6937a0648.png",
+    "static/media/mainBack).jpg": "/static/media/mainBack).9174711c94e8281d2317.jpg",
+    "static/media/preloader-red.gif": "/static/media/preloader-red.142444af88c5d06b4137.gif",
+    "static/media/eleven.jpg": "/static/media/eleven.063578d5b6d5ab4155ec.jpg",
+    "static/media/giphy.gif": "/static/media/giphy.90af8510285638891f1a.gif",
+    "static/media/tv.png": "/static/media/tv.0049bc70babc1f94cf88.png",
+    "index.html": "/index.html",
+    "main.21ef946d.css.map": "/static/css/main.21ef946d.css.map",
+    "main.6ccc3dd0.js.map": "/static/js/main.6ccc3dd0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21ef946d.css",
+    "static/js/main.6ccc3dd0.js"
+  ]
+}

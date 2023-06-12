@@ -3,10 +3,13 @@ import "./home.css";
 import YouTube from "react-youtube";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 import movieTrailer from "movie-trailer";
 import { ToastContainer, toast } from "react-toastify";
 function ReusableTrailers({ api, title, backdrop }) {
   const [trailerImage, setTrailerImage] = useState([]);
+  const [Notloaded, setLoaded] = useState(true);
   //   trailer url
   const [trailerurl, settrailerurl] = useState("");
   const base_url = "https://api.themoviedb.org/3";
@@ -14,6 +17,7 @@ function ReusableTrailers({ api, title, backdrop }) {
   useEffect(() => {
     axios.get(`${base_url}${api}`).then((data) => {
       setTrailerImage(data.data.results);
+      setLoaded(false);
     });
   }, []);
   console.log(trailerImage);
@@ -49,6 +53,15 @@ function ReusableTrailers({ api, title, backdrop }) {
   };
   return (
     <div className={`category ${backdrop && "mainholder"}`}>
+
+      {Notloaded &&    
+   <Backdrop
+  sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+  open
+  
+>
+  <CircularProgress color="inherit" />
+</Backdrop>}
       <ToastContainer
         position={"top-center"}
         closeOnClick={false}
