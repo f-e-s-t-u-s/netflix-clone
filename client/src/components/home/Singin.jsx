@@ -28,7 +28,7 @@ function Singin() {
     };
     console.log(userData);
     await axios
-      .post("http://localhost:8000/api/login", userData)
+      .post("https://netflix-secondclone.onrender.com/api/login", userData)
       .then((data) => {
         console.log(data.data);
         setpreloader(false);
@@ -113,9 +113,7 @@ function Singin() {
                           to={"/"}
                           style={{ textDecoration: "none" }}
                         >
-                          
                           <p>
-                            
                             <span> New to Netflix? </span>Sign up now
                           </p>
                         </Link>
@@ -132,7 +130,7 @@ function Singin() {
                 </div>
               </div>
             </div>
-           <Footer></Footer>
+            <Footer></Footer>
           </div>
         </div>
       </div>

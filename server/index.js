@@ -4,8 +4,7 @@ import dotenv from "dotenv"
 import bodyParser from "body-parser";
 import bcrypt from "bcryptjs"
 import { connect } from "./schema/connection.js";
-
-
+import signupSchema from "./schema/userShema.js";
 
 dotenv.config();
 
@@ -26,7 +25,7 @@ const port =process.env.PORT
 
 app.post("/api/register", async (req, res) => {
   // console.log(req.body.email_address)
-  const userExist= await userschema.findOne({email:req.body.email})
+  const userExist= await signupSchema.findOne({email:req.body.email})
   if(userExist) return res.json({error:'user already exist'})
 
   // console.log(value.password);
@@ -35,7 +34,7 @@ app.post("/api/register", async (req, res) => {
     email: req.body.email,
     password: passHashed,
   };
-  const create_user = await userschema.create(values);
+  const create_user = await signupSchema.create(values);
   
 if(!create_user)return res.json({error:'failed to add user'})
 
@@ -48,7 +47,7 @@ if(!create_user)return res.json({error:'failed to add user'})
 app.post("/api/login", async (req, res) => {
   const { email_address, password } = req.body;
  
-  const user=await userschema.findOne({email:email_address})
+  const user=await signupSchema.findOne({email:email_address})
 
 
   if (!user) {

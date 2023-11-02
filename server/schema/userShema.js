@@ -1,5 +1,7 @@
-import mongoose from "mongoose"
-const signupSchema=mongoose.Schema({
+import mongoose,{Schema} from "mongoose"
+
+
+const signupSchema=new Schema({
 
 user_name:String,
 email:{
@@ -16,5 +18,6 @@ password:String
 
 
 )
-  export const  signup_collection=mongoose.model('users',signupSchema)
+   const  signup_collection=mongoose.model('users',signupSchema)
+   export default signupSchema;
  
