@@ -19,5 +19,5 @@ password:String
 
 )
    const  signup_collection=mongoose.model('users',signupSchema)
-   export default signupSchema;
+   export default signup_collection;
  
