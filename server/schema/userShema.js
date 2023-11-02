@@ -1,4 +1,4 @@
-const mongoose=require('mongoose')
+import mongoose from "mongoose"
 const signupSchema=mongoose.Schema({
 
 user_name:String,
@@ -16,5 +16,5 @@ password:String
 
 
 )
- const  signup_collection=mongoose.model('users',signupSchema)
- module.exports =signup_collection
+  export const  signup_collection=mongoose.model('users',signupSchema)
+ 
