@@ -1,5 +1,7 @@
-const mongoose=require('mongoose')
-const signupSchema=mongoose.Schema({
+import mongoose,{Schema} from "mongoose"
+
+
+const signupSchema=new Schema({
 
 user_name:String,
 email:{
@@ -16,5 +18,6 @@ password:String
 
 
 )
- const  signup_collection=mongoose.model('users',signupSchema)
- module.exports =signup_collection
+   const  signup_collection=mongoose.model('users',signupSchema)
+   export default signup_collection;
+ 
